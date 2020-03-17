@@ -26,13 +26,20 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-				<standaloneDeployment>
+				<!-- <standaloneDeployment>
          			<muleVersion>${mule.version}</muleVersion>
          			<muleHome>${mule.home}</muleHome>        
-      			</standaloneDeployment>
+      			</standaloneDeployment> -->
 				<!-- <agentDeployment>
 			      <uri>http://localhost:9999/</uri>
 			    </agentDeployment> -->
+			    <cloudHubDeployment> 
+		        	 <workers>1</workers>
+			         <workerType>Micro</workerType>
+		        	 <environment>Sandbox</environment>
+		        	 <muleVersion>4.2.2</muleVersion>
+		         	<applicationName>Belk-Demo-Application</applicationName>
+      			</cloudHubDeployment>
 				</configuration>
 			</plugin>
 		</plugins>
