@@ -35,7 +35,7 @@
 			            			<environment>SANDBOX</environment>
 							<region>eu-west-1</region>
 							<workers>1</workers>
-							<workerType>SMALL </workerType>
+							<workerType>SMALL</workerType>
 			            			<properties>
 			                			<key>value</key>
 			            			</properties>
