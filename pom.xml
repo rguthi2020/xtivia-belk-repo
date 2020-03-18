@@ -3,19 +3,18 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.mycompany</groupId>
+	<groupId>com.xtivia</groupId>
 	<artifactId>mule-maven-example</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>mule-application</packaging>
-
 	<name>mule-maven-example</name>
 
     <properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
 		<app.runtime>4.2.2</app.runtime>
 		<mule.maven.plugin.version>3.3.5</mule.maven.plugin.version>
+		
 	</properties>
 
 	<build>
@@ -26,21 +25,31 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-				<!-- <standaloneDeployment>
-         			<muleVersion>${mule.version}</muleVersion>
-         			<muleHome>${mule.home}</muleHome>        
-      			</standaloneDeployment> -->
-				<!-- <agentDeployment>
-			      <uri>http://localhost:9999/</uri>
-			    </agentDeployment> -->
-			    <cloudHubDeployment> 
-		        	 <workers>1</workers>
-			         <workerType>Micro</workerType>
-		        	 <environment>Sandbox</environment>
-		        	 <muleVersion>4.2.2</muleVersion>
-		         	<applicationName>Belk-Demo-Application</applicationName>
-      			</cloudHubDeployment>
+                    			<copyToAppsDirectory>true</copyToAppsDirectory>    
+                    				<cloudHubDeployment>
+			            			<uri>https://anypoint.mulesoft.com</uri>
+			            			<muleVersion>4.2.2</muleVersion>
+			            			<username>rguthi_xtivia2020</username>
+			            			<password>HydusXtivia2020</password>
+			            			<applicationName>mule-maven-example</applicationName>
+			            			<environment>SANDBOX</environment>
+							<region>eu-west-1</region>
+							<workers>1</workers>
+							<workerType>SMALL </workerType>
+			            			<properties>
+			                			<key>value</key>
+			            			</properties>
+		        			</cloudHubDeployment> 
 				</configuration>
+		        	<executions>
+	               			<execution>
+						<id>deploy</id>
+						<phase>deploy</phase>
+						<goals>
+						<goal>deploy</goal>
+						</goals>
+	              			</execution>
+            			</executions>              		
 			</plugin>
 		</plugins>
 	</build>
