@@ -39,6 +39,7 @@
 			            			<properties>
 			                			<key>value</key>
 			            			</properties>
+							<skipDeploymentVerification>true</skipDeploymentVerification>
 		        			</cloudHubDeployment> 
 				</configuration>
 		        	<executions>
